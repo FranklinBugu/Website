@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shadow Strike</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- =========================
+         HUD
+    ========================== -->
+
+    <div class="hud">
+
+        <div class="hud-box">
+            SCORE
+            <strong id="score">0</strong>
+        </div>
+
+        <div class="hud-box">
+            WAVE
+            <strong id="wave">1</strong>
+        </div>
+
+        <div class="hud-box health">
+            HEALTH
+
+            <div class="health-bar">
+                <div id="healthBar"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Leaderboard button -->
+
+    <button id="leaderboardButton" class="leaderboard-button">
+        🏆 LEADERBOARD
+    </button>
+
+
+    <!-- Controls -->
+
+    <div class="controls">
+        <b>W A S D</b> Move
+        &nbsp; | &nbsp;
+        <b>Mouse</b> Aim
+        &nbsp; | &nbsp;
+        <b>Click</b> Shoot
+    </div>
+
+
+    <!-- =========================
+         START SCREEN
+    ========================== -->
+
+    <div id="startScreen" class="overlay">
+
+        <div class="start-box">
+
+            <h1>
+                SHADOW
+                <span>STRIKE</span>
+            </h1>
+
+            <p>
+                Survive the enemy waves.
+            </p>
+
+            <button id="startButton">
+                ▶ START GAME
+            </button>
+
+            <button id="startLeaderboardButton" class="secondary-button">
+                🏆 LEADERBOARD
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         GAME OVER
+    ========================== -->
+
+    <div id="gameOver" class="overlay hidden">
+
+        <div class="start-box">
+
+            <h1>
+                GAME
+                <span>OVER</span>
+            </h1>
+
+            <p>
+                Score:
+                <strong id="finalScore">0</strong>
+            </p>
+
+            <p>
+                Wave:
+                <strong id="finalWave">1</strong>
+            </p>
+
+            <div id="newHighScore" class="new-high-score hidden">
+                🏆 NEW HIGH SCORE!
+            </div>
+
+            <button id="restartButton">
+                🔄 PLAY AGAIN
+            </button>
+
+            <button id="gameOverLeaderboardButton" class="secondary-button">
+                🏆 LEADERBOARD
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LEADERBOARD
+    ========================== -->
+
+    <div id="leaderboardScreen" class="overlay hidden">
+
+        <div class="leaderboard-box">
+
+            <div class="leaderboard-header">
+
+                <h1>
+                    🏆
+                    <span>LEADERBOARD</span>
+                </h1>
+
+                <button id="closeLeaderboard">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div id="leaderboardList">
+
+                <!-- Scores inserted by JavaScript -->
+
+            </div>
+
+
+            <button id="clearLeaderboard" class="clear-button">
+                CLEAR SCORES
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAME INPUT
+    ========================== -->
+
+    <div id="nameScreen" class="overlay hidden">
+
+        <div class="start-box">
+
+            <h1>
+                ENTER
+                <span>YOUR NAME</span>
+            </h1>
+
+            <p>
+                Your score will be added to the leaderboard.
+            </p>
+
+            <input
+                id="playerName"
+                type="text"
+                maxlength="15"
+                placeholder="Enter your name"
+                autocomplete="off"
+            >
+
+            <button id="saveScoreButton">
+                SAVE SCORE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+</html>
